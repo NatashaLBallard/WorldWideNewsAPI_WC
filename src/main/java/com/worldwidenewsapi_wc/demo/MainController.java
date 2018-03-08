@@ -43,7 +43,7 @@ public class MainController {
 
 
 
-        //DISPLAYS FOR TOPNEWS
+//        //DISPLAYS FOR TOPNEWS
         RestTemplate restTemplate = new RestTemplate();
         TopNews topNews = restTemplate.getForObject("https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=90e180a070b44a8ea17d3e4ad5a080c0",TopNews.class);
 
@@ -51,6 +51,12 @@ public class MainController {
         return topNews.getStatus();
 
 
+//        //DISPLAYS FOR Articles - weird variable types
+//        RestTemplate restTemplate = new RestTemplate();
+//        Articles articles = restTemplate.getForObject("https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=90e180a070b44a8ea17d3e4ad5a080c0",Articles.class);
+//
+//        System.out.println(articles);
+//        return articles.getAuthor();
 
 
 //

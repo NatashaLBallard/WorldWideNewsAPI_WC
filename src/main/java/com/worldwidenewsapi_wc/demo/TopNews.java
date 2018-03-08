@@ -5,6 +5,9 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.util.ArrayList;
+
+
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class TopNews {
 
@@ -14,7 +17,9 @@ public class TopNews {
 
     private int totalResults;
 
-//    private Articles articles;
+    private Articles articles;
+
+//   private ArrayList <Articles> articles;
 
 //    private Source source;
 
@@ -38,13 +43,13 @@ public class TopNews {
         this.totalResults = totalResults;
     }
 
-//    public Articles getArticles() {
-//        return articles;
-//    }
-//
-//    public void setArticles(Articles articles) {
-//        this.articles = articles;
-//    }
+    public Articles getArticles() {
+        return articles;
+    }
+
+    public void setArticles(Articles articles) {
+        this.articles = articles;
+    }
 
 //    public Source getSource() {
 //        return source;
@@ -59,7 +64,27 @@ public class TopNews {
         return "TopNews{" +
                 "status='" + status +'\'' +
                 "totalResults='" + totalResults +'\'' +
-//                "articles='" + articles +'\'' +
+                "articles='" + articles +'\'' +
+                "articles='" + articles +'\'' +
+                "articles='" + articles +'\'' +
+                "articles='" + articles +'\'' +
+                "articles='" + articles +'\'' +
+                "articles='" + articles +'\'' +
+                "articles='" + articles +'\'' +
+                "articles='" + articles +'\'' +
+                "articles='" + articles +'\'' +
+                "articles='" + articles +'\'' +
+                "articles='" + articles +'\'' +
+                "articles='" + articles +'\'' +
+                "articles='" + articles +'\'' +
+                "articles='" + articles +'\'' +
+                "articles='" + articles +'\'' +
+                "articles='" + articles +'\'' +
+                "articles='" + articles +'\'' +
+                "articles='" + articles +'\'' +
+                "articles='" + articles +'\'' +
+                "articles='" + articles +'\'' +
+
 //                "source='" + source +'\'' +
                 '}';
     }

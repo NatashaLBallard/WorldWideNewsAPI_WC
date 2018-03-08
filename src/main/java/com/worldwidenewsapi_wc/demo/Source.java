@@ -2,11 +2,15 @@ package com.worldwidenewsapi_wc.demo;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import javax.persistence.Column;
+
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Source {
 
+    @Column(name="sourceId")
     private String id;
 
+    @Column(name="sourceName")
     private String name;
 
 //    private Articles articles;
@@ -48,7 +52,6 @@ public class Source {
         return "Source{" +
                 "id='" + id +'\'' +
                 "name='" + name +'\'' +
-               // "articles='" + articles +'\'' +
                 '}';
     }
 
