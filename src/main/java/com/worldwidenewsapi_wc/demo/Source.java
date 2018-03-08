@@ -9,6 +9,10 @@ public class Source {
 
     private String name;
 
+//    private Articles articles;
+//
+//    private TopNews topNews;
+
     public Source() {
     }
 
@@ -28,11 +32,26 @@ public class Source {
         this.name = name;
     }
 
+//    public Articles getArticles() {
+//        return articles;
+//    }
+//
+//    public void setArticles(Articles articles) {
+//        this.articles = articles;
+//    }
+
+//
+
+
     @Override
     public String toString(){
         return "Source{" +
                 "id='" + id +'\'' +
                 "name='" + name +'\'' +
+               // "articles='" + articles +'\'' +
                 '}';
     }
+
+
+
 }

@@ -21,7 +21,9 @@ public class Articles {
 
     private Date publishedAt;
 
-    private Source source;
+//    private Source source;
+//
+    private TopNews topNews;
 
     public Articles() {
     }
@@ -35,7 +37,7 @@ public class Articles {
         this.author = author;
     }
 
-    public String getTile() {
+    public String getTitle() {
         return title;
     }
 
@@ -74,25 +76,36 @@ public class Articles {
     public void setPublishedAt(Date publishedAt) {
         this.publishedAt = publishedAt;
     }
-
-    public Source getSource() {
-        return source;
+//
+//    public Source getSource() {
+//        return source;
+//    }
+//
+//    public void setSource(Source source) {
+//        this.source = source;
+//    }
+//
+    public TopNews getTopNews() {
+        return topNews;
     }
 
-    public void setSource(Source source) {
-        this.source = source;
+    public void setTopnews(TopNews topNews) {
+        this.topNews = topNews;
     }
 
     @Override
     public String toString(){
         return "Articles{" +
+//                "source='" + source +'\'' +
                 "author='" + author +'\'' +
                 "title='" + title +'\'' +
                 "description='" + description +'\'' +
                 "url='" + url +'\'' +
                 "urlToImage='" + urlToImage +'\'' +
                 "publishedAt='" + publishedAt +'\'' +
-                "source='" + source +'\'' +
+                "topNews='" + topNews +'\'' +
                 '}';
     }
+
+
 }
