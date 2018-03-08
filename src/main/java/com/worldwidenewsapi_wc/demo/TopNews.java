@@ -45,8 +45,8 @@ public class TopNews {
     public String toString(){
         return "TopNews{" +
                 "status='" + status +'\'' +
-//                "totalResults='" + totalResults +'\'' +
-//                "articles='" + articles +'\'' +
+                "totalResults='" + totalResults +'\'' +
+                "articles='" + articles +'\'' +
                 '}';
     }
 

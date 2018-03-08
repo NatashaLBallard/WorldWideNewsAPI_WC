@@ -1,10 +1,12 @@
 package com.worldwidenewsapi_wc.demo;
 
 
+import org.springframework.context.annotation.Bean;
 import org.springframework.http.MediaType;
 import org.springframework.http.client.ClientHttpRequestFactory;
 import org.springframework.http.client.HttpComponentsClientHttpRequestFactory;
 import org.springframework.http.converter.HttpMessageConverter;
+import org.springframework.http.converter.json.GsonHttpMessageConverter;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,18 +17,27 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import static javax.print.DocFlavor.READER.TEXT_PLAIN;
+
 @Controller
 public class MainController {
+
 
     @RequestMapping("/")
     public @ResponseBody String showIndex(){
 
         //DISPLAYS FOR SOURCE ONLY
-        RestTemplate restTemplate = new RestTemplate();
-        Source source = restTemplate.getForObject("https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=90e180a070b44a8ea17d3e4ad5a080c0",Source.class);
+//        RestTemplate restTemplate = new RestTemplate();
+//        Source source = restTemplate.getForObject("https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=90e180a070b44a8ea17d3e4ad5a080c0",Source.class);
+//
+//        System.out.println(source);
+//        return source.getName();
 
-        System.out.println(source);
-        return source.getId();
+        RestTemplate restTemplate = new RestTemplate();
+        Articles articles = restTemplate.getForObject("https://newsapi.org/v2/top-headlines?country=us&apiKey=90e180a070b44a8ea17d3e4ad5a080c0",Articles.class);
+
+        System.out.println(articles);
+        return articles.getAuthor();
 
 //        ClientHttpRequestFactory requestFactory = new HttpComponentsClientHttpRequestFactory(TopNews.class);
 
@@ -61,5 +72,14 @@ public class MainController {
 
 
 
+    @RequestMapping("/test")
+    public @ResponseBody String showTest(){
+        RestTemplate restTemplate = new RestTemplate();
+        Horoscope quote = restTemplate.getForObject("http://gturnquist-quoters.cfapps.io/api/random",Horoscope.class);
+
+
+        System.out.println(quote);
+        return quote.getValue().getQuote();
+    }
 
 }
